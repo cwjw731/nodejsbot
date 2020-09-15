@@ -31,8 +31,12 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '=ping') {
+    return message.reply('퐁임');
+  }
+
+  if(message.content == '=안녕') {
+    return message.reply('안녕하세요!');
   }
 
   if(message.content == 'embed') {
@@ -50,22 +54,22 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('채루가 만듬', img)
 
     message.channel.send(embed)
-  } else if(message.content == 'embed2') {
+  } else if(message.content == '=명령어') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
-      {name: 'embed2', desc: 'embed 예제2 (help)'},
-      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '=ping', desc: '현재 핑 상태'},
+      {name: '=명령어', desc: '명령어 (help)'},
+      {name: '=전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '=안녕', desc: '인사'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('명령어 정보 입니다!', helpImg)
       .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setFooter(`❤️냥 BOT❤️`)
       .setTimestamp()
     
     commandList.forEach(x => {
