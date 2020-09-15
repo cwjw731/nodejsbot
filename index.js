@@ -38,6 +38,21 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '!정보') {
+    return message.reply('제작자: 채루');
+  }
+
+  if(message.content == '씨발') 
+  {
+    return message.reply('바르고 고운말 쓰세요 ㅎㅎ');
+  }
+
+  if(message.content == '응 아니야') 
+  {
+    return message.reply('머가?');
+  }
+
+
   if(message.content == '!si') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
@@ -98,6 +113,7 @@ client.on('message', (message) => {
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '!봇정보', desc: '제작자 '}
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
