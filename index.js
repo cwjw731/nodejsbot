@@ -7,7 +7,7 @@ const welcomeChannelComment = "어서오세요.";
 const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
-  console.log('켰다.');
+  console.log('ready!.');
 });
 
 client.on("guildMemberAdd", (member) => {
