@@ -10,7 +10,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('켰다.');
-  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '!명령어 정보 를 쳐보세요!.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -43,8 +43,8 @@ client.on('message', (message) => {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('server info of 콜라곰 BOT', img)
-    embed.setFooter(`콜라곰 BOT ❤️`)
+    embed.setAuthor('냥봇입니다.', img)
+    embed.setFooter(`❤️냥 BOT❤️`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -87,10 +87,10 @@ client.on('message', (message) => {
       .setFooter('채루가 만듬', img)
 
     message.channel.send(embed)
-  } else if(message.content == '!help') {
+  } else if(message.content == '!명령어 정보') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '!help', desc: 'help'},
+      {name: '!명령어 정보', desc: 'help'},
       {name: '!si', desc: '현재 핑 상태'},
       {name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
@@ -143,7 +143,7 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 채루 BOT')
+        .setAuthor('커뮤니티에서 발송됨')
         .setColor('#186de6')
         .setFooter(`❤️ 냥 BOT ❤️`)
         .setTimestamp()
